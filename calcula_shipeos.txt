@@ -1,0 +1,77 @@
+const list = [...new Set(["{id:{arg:0}}", "{id:{arg:1}}",...discord.guild.presences.filter(e=>!e.user.bot || !(e.status=="online"||e.status=="idle"||e.status=="dnd")).map(e=>e.user.id)])].slice(2);
+
+{ignore:
+const percentage=30;
+const possibleRenders=[
+    [
+        10,
+        [
+            [220, 75, 80, 18],
+            [385, 160, 80, 5]
+        ],
+        "https://media.discordapp.net/attachments/1167806839929438280/1279924533788409928/image_-_2024-09-01T235949.755.png",
+        "https://media.discordapp.net/attachments/1167806839929438280/1279928391801245696/image_-_2024-09-02T001820.957.png"
+    ],
+    [
+        25,
+        [
+            [75, 90, 110, -20],
+            [365, 18, 110, -23]
+        ],
+        "https://media.discordapp.net/attachments/1167806839929438280/1279934232474685482/desastre.png"
+    ],
+    [
+        35,
+        [
+            [265, 150, 100, -20]
+            [500, 195, 100,0],
+            [45, 180, 120,0]
+        ],
+        "https://media.discordapp.net/attachments/1167806839929438280/1279941068951130193/New_Project_38.png"
+    ],
+    [
+        50,
+        [
+            [55, 166, 130,0],
+            [510, 116, 130,0]
+        ],
+        "https://media.discordapp.net/attachments/1167806839929438280/1279943496563949644/sin_lealtad.png"
+    ],
+    [
+        60,
+        [
+            [230, 70, 65, 20],
+            [370, 100, 65, 7]
+        ],
+        "https://media.discordapp.net/attachments/1167806839929438280/1279946999457910834/desastre_1.png"
+    ]
+]
+const toRender = possibleRenders.find((e)=>e[0]>=percentage)
+`
+{iscript:
+load ${toRender[2]} background
+load ${toRender[3]??"https://media.discordapp.net/attachments/1167806839929438280/1279949076003295388/Empty.png"} foreground
+load {replace:.gif|.png|{avatar:{arg:0}}} first
+load {replace:.gif|.png|{avatar:{arg:1}}} second
+
+resize first ${toRender[1][0][2]} ${toRender[1][0][2]}
+rotate first ${toRender[1][0][3]}
+overlay background first ${toRender[1][0][0]} ${toRender[1][0][1]}
+
+resize second ${toRender[1][1][2]} ${toRender[1][1][2]}
+rotate second ${toRender[1][1][3]}
+overlay background second ${toRender[1][1][0]} ${toRender[1][1][1]}
+
+${toRender[1][2]?`
+load {avatar:${list[Math.floor(Math.random()*list.length)]}} third
+resize third ${toRender[1][2][2]} ${toRender[1][2][2]}
+rotate third ${toRender[1][2][3]}
+overlay background third ${toRender[1][2][0]} ${toRender[1][2][1]}
+`:""}
+
+overlay background foreground
+render background
+}
+`
+console.log(toRender);
+}

@@ -1,4 +1,4 @@
-const list = [...new Set(["{id:{arg:0}}", "{id:{arg:1}}",...discord.guild.presences.filter(e=>!e.user.bot || !(e.status=="online"||e.status=="idle"||e.status=="dnd")).map(e=>e.user.id)])].slice(2);
+const list = [...new Set(["{id:{arg:0}}", "{id:{arg:1}}",...discord.guild.presences.filter(e=>!e.user.bot || !(e.status=="online"||e.status=="idle"||e.status=="dnd")).map(e=>e.user.id)], "439205512425504771", "1264953044911657082")].slice(2);
 
 {ignore:
 const percentage=30;

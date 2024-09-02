@@ -106,7 +106,7 @@ overlay background percentage 314-(w/2) 480
 
 tti name 33 999 black ${name}
 get percentage width we
-overlay background percentage 314-(we/2) 550
+overlay background name 314-(we/2) 550
 
 render background
 }

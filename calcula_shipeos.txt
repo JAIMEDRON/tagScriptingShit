@@ -38,7 +38,7 @@ const possibleRenders=[
         "https://media.discordapp.net/attachments/1167806839929438280/1279943496563949644/sin_lealtad.png"
     ],
     [
-        60,
+        68,
         [
             [230, 70, 65, 20],
             [355, 100, 65, 7]
@@ -46,7 +46,7 @@ const possibleRenders=[
         "https://media.discordapp.net/attachments/1167806839929438280/1279946999457910834/desastre_1.png"
     ],
     [
-        75,
+        80,
         [
             [22, 149, 64,0],
             [22, 247, 64,0]
@@ -55,7 +55,7 @@ const possibleRenders=[
         "https://media.discordapp.net/attachments/1167806839929438280/1280246207964512389/desastre_3.png"
     ],
     [
-        85,
+        90,
         [
             [15, 100, 75,0],
             [70, 100, 75,9]

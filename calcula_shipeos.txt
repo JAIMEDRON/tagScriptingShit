@@ -1,5 +1,7 @@
 const list = [...new Set(["{id:{arg:0}}", "{id:{arg:1}}",...discord.guild.presences.filter(e=>!e.user.bot || !(e.status=="online"||e.status=="idle"||e.status=="dnd")).map(e=>e.user.id), "439205512425504771", "1264953044911657082"])].slice(2);
 
+const name=["{name:{arg:0}}","{name:{arg:1}}"].reduce((e,v,i)=>e+v.substring(v.length*0.5*i, v.length*(0.5*(i+1))), "")
+
 {ignore:
 const percentage=Math.round(Math.random()*100);
 const possibleRenders=[
@@ -102,6 +104,11 @@ tti percentage 73 999 black ${percentage}%
 get percentage width w
 overlay background percentage 314-(w/2) 480
 
+tti name 33 999 black ${name}
+get percentage width we
+overlay background percentage 314-(we/2) 550
+
+{substring:text|start|end}
 render background
 }
 `

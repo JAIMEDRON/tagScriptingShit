@@ -73,5 +73,5 @@ overlay background foreground
 render background
 }
 `
-console.log(text);
+console.log(text );
 }

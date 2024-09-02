@@ -44,8 +44,35 @@ const possibleRenders=[
             [355, 100, 65, 7]
         ],
         "https://media.discordapp.net/attachments/1167806839929438280/1279946999457910834/desastre_1.png"
+    ],
+    [
+        75,
+        [
+            [22, 149, 64,0],
+            [22, 247, 64,0]
+        ],
+        "https://media.discordapp.net/attachments/1167806839929438280/1280246191770046574/desastre_2.png",
+        "https://media.discordapp.net/attachments/1167806839929438280/1280246207964512389/desastre_3.png"
+    ],
+    [
+        85,
+        [
+            [15, 100, 75,0],
+            [70, 100, 75,9]
+        ],
+        "https://media.discordapp.net/attachments/1167806839929438280/1280249583867531367/desastre_4.png"
+    ],
+    [
+        100,
+        [
+            [260, 25, 150, 10],
+            [185, 55, 135, -10]
+        ],
+        "https://media.discordapp.net/attachments/1167806839929438280/1280267299772825703/en_publico.png",
+        "https://media.discordapp.net/attachments/1167806839929438280/1280267300058173471/en_publico_2.png"
     ]
 ];
+
 const toRender = possibleRenders.find((e)=>e[0]>=percentage);
 const text=`
 {iscript:
@@ -71,7 +98,7 @@ overlay background third ${toRender[1][2][0]} ${toRender[1][2][1]}
 
 overlay background foreground
 
-tti percentage 73 999 red ${percentage}%
+tti percentage 73 999 black ${percentage}%
 get percentage width w
 overlay background percentage 314-(w/2) 480
 

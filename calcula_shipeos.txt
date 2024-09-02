@@ -65,8 +65,8 @@ const possibleRenders=[
     [
         100,
         [
-            [260, 25, 150, 10],
-            [185, 55, 135, -10]
+            [185, 55, 135, -10],
+            [260, 25, 150, 10]
         ],
         "https://media.discordapp.net/attachments/1167806839929438280/1280267299772825703/en_publico.png",
         "https://media.discordapp.net/attachments/1167806839929438280/1280267300058173471/en_publico_2.png"

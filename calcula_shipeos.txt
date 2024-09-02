@@ -1,7 +1,12 @@
+function secreto(a){ return function () { a |= 0; a = a + 0x9e3779b9 | 0; let t = a ^ a >>> 16; t = Math.imul(t, 0x21f0aaad); t = t ^ t >>> 15; t = Math.imul(t, 0x735a2d97); return ((t = t ^ t >>> 15) >>> 0) / 4294967296; } }
+const [id1,id2]=["{id:{arg:0}}","{id:{arg:1}}"]
+const masSecreto = secreto((id1-0)>(id2-0)?id1+id2:id2+id1);
+const aunMasSecreto = Math.round(masSecreto() * 100);
+
 const list = [...new Set(["{id:{arg:0}}", "{id:{arg:1}}",...discord.guild.presences.filter(e=>!e.user.bot || !(e.status=="online"||e.status=="idle"||e.status=="dnd")).map(e=>e.user.id), "439205512425504771", "1264953044911657082"])].slice(2);
 
 {ignore:
-const percentage=30;
+const percentage=aunMasSecreto;
 const possibleRenders=[
     [
         10,
@@ -70,6 +75,11 @@ overlay background third ${toRender[1][2][0]} ${toRender[1][2][1]}
 `:""}
 
 overlay background foreground
+
+tti percentage 73 999 black ${aunMasSecreto}%
+get percentage width w
+overlay background percentage 314-(w/2) 480
+
 render background
 }
 `

@@ -71,7 +71,7 @@ overlay background third ${toRender[1][2][0]} ${toRender[1][2][1]}
 
 overlay background foreground
 
-tti percentage 73 999 pink ${percentage}%
+tti percentage 73 999 red ${percentage}%
 get percentage width w
 overlay background percentage 314-(w/2) 480
 

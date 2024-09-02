@@ -46,8 +46,8 @@ const possibleRenders=[
         "https://media.discordapp.net/attachments/1167806839929438280/1279946999457910834/desastre_1.png"
     ]
 ]
-const toRender = possibleRenders.find((e)=>e[0]>=percentage)
-`
+const toRender = possibleRenders.find((e)=>e[0]>=percentage);
+const text=`
 {iscript:
 load ${toRender[2]} background
 load ${toRender[3]??"https://media.discordapp.net/attachments/1167806839929438280/1279949076003295388/Empty.png"} foreground

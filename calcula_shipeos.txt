@@ -57,7 +57,7 @@ const possibleRenders=[
         "https://media.discordapp.net/attachments/1167806839929438280/1280246207964512389/desastre_3.png"
     ],
     [
-        90,
+        89,
         [
             [15, 100, 75,0],
             [70, 100, 75,9]

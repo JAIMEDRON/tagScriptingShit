@@ -36,9 +36,7 @@
       .then(res => console.log(res.response))
 }
 
-Y AHORA!
-
-{javascript:
+{setuser:feelings|{javascript:
     const feelingList = [
         "Indiferencia",
         "Admiración",
@@ -81,4 +79,4 @@ Y AHORA!
             console.log(AIFeelings)
         }
       })
-}
+}}

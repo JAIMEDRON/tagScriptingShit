@@ -74,9 +74,9 @@
       .then(res => res.json())
       .then(res =>{
         if (feelingList.includes(res.response.trim())){
-            return feelingList.indexOf(res.response.trim())
+            console.log(feelingList.indexOf(res.response.trim()))
         } else {
-            return AIFeelings
+            console.log(AIFeelings)
         }
       })
 }}}

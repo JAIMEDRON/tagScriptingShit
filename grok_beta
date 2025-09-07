@@ -17,7 +17,7 @@
         "Envidia",
         "Amor"
     ];
-    const AIFeelings= {eval:{if:{getuser:feelings}|=||then:{setuser:feelings|0}0|else:{getuser:feelings}}};
+    const AIFeelings= "{getuser:feelings}"=="" ? 0 : {getuser:feelings}-0;
 
     const messagesThread=getAllMessagesInThread(discord.message);
     function getAllMessagesInThread(message) {
@@ -55,7 +55,7 @@
         "Envidia",
         "Amor"
     ];
-    const AIFeelings={eval:{if:{getuser:feelings}|=||then:{setuser:feelings|0}0|else:{getuser:feelings}}};
+    const AIFeelings= "{getuser:feelings}"=="" ? 0 : {getuser:feelings}-0;
 
     const messagesThread=getAllMessagesInThread(discord.message);
     function getAllMessagesInThread(message) {

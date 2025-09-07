@@ -37,7 +37,6 @@
 }
 
 {setuser:feelings|{javascript:{
-    {javascript:
     const feelingList = [
         "Indiferencia",
         "Admiración",
@@ -70,7 +69,7 @@
     Teniendo en cuenta esta lista de emociones: ${feelingList.join(", ")}; y con la siguiente conversación cambia tu sentimiento actual sobre ${messagesThread.at(-1).author.username} a uno diferente, pero relacionado:
     ${messagesThread.map(m => `${m.author.username}: ${m.content}`).join("\n")}
     
-    Asegurate de responder solo con el nombre del sentimiento, sin explicaciones.`;
+    Asegurate de responder solo con el nombre del sentimiento que esté en la lista, sin explicaciones.`;
     fetch(`https://gemini-rest.vercel.app/api/?prompt=${encodeURIComponent(quest)}`)
       .then(res => res.json())
       .then(res =>{

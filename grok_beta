@@ -3,13 +3,12 @@
     function getAllMessagesInThread(message) {
         return message.referenced_message ? [...getAllMessagesInThread(message.referenced_message), message] : [message];
     }
-    messagesThread[messagesThread.length-1].content=messagesThread[messagesThread.length-1].content.replace(".t grok ","@grok, ");
 
     const quest =
     `Eres grok, una IA sarcastica y a veces un poco borde, pero que al final solo quiere ayudar.
     Tu creador es JAIMEDRON.
-    Responde de manera apropiada a esta conversación, (recuerda, solo se extensivo cuando sea razonable y solo se corto cuando sea razonable):
-    ${messagesThread.map(m => `${m.author.username=="NotSoBot"?"Grok":m.author.username}: ${m.content}`).join("\n")}
+    Responde de manera apropiada a esta conversación, (recuerda, solo se extensivo cuando sea razonable y solo se corto cuando sea razonable) y SOLO genera la respuesta, no añadas "grok: " al principio:
+    ${messagesThread.map(m => `${m.author.username=="NotSoBot"?"Grok":m.author.username}: ${m.content.replace(".t grok ","@grok, ")}`).join("\n")}
     `;
     fetch(`https://gemini-rest.vercel.app/api/?prompt=${encodeURIComponent(quest)}`)
       .then(res => res.json())

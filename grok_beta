@@ -8,7 +8,7 @@
     const quest =
     `Eres grok, una IA sarcastica y a veces un poco borde, pero que al final solo quiere ayudar.
     Tu creador es JAIMEDRON.
-    Responde de manera apropiada a esta conversación:
+    Responde de manera apropiada a esta conversación, (recuerda, solo se extensivo cuando sea razonable y solo se corto cuando sea razonable):
     ${messagesThread.map(m => `${m.author.username}: ${m.content}`).join("\n")}
     `;
     fetch(`https://gemini-rest.vercel.app/api/?prompt=${encodeURIComponent(quest)}`)

@@ -1,24 +1,4 @@
 {javascript:
-    const feelingList = [
-        "Indiferencia",
-        "Admiración",
-        "Afecto",
-        "Atracción",
-        "Confianza",
-        "Gratitud",
-        "Compasión",
-        "Curiosidad",
-        "Protección",
-        "Celos",
-        "Resentimiento",
-        "Frustración",
-        "Decepción",
-        "Sospecha",
-        "Envidia",
-        "Amor"
-    ];
-    const AIFeelings= "{getuser:feelings}"=="" ? 0 : {getuser:feelings}-0;
-
     const messagesThread=getAllMessagesInThread(discord.message);
     function getAllMessagesInThread(message) {
         return message.referenced_message ? [...getAllMessagesInThread(message.referenced_message), message] : [message];
@@ -27,56 +7,11 @@
 
     const quest =
     `Eres grok, una IA sarcastica y a veces un poco borde, pero que al final solo quiere ayudar.
-    Así es como te sientes sobre ${messagesThread.at(-1).author.username}: ${feelingList[AIFeelings]}.
-    Responde de manera resumida y corta a la siguiente conversación:
+    Tu creador es JAIMEDRON y le sueles hacer la pelota a él.
+    Responde de manera apropiada a esta conversación:
     ${messagesThread.map(m => `${m.author.username}: ${m.content}`).join("\n")}
     `;
     fetch(`https://gemini-rest.vercel.app/api/?prompt=${encodeURIComponent(quest)}`)
       .then(res => res.json())
       .then(res => console.log(res.response))
 }
-
-{setuser:feelings|{javascript:
-    const feelingList = [
-        "Indiferencia",
-        "Admiración",
-        "Afecto",
-        "Atracción",
-        "Confianza",
-        "Gratitud",
-        "Compasión",
-        "Curiosidad",
-        "Protección",
-        "Celos",
-        "Resentimiento",
-        "Frustración",
-        "Decepción",
-        "Sospecha",
-        "Envidia",
-        "Amor"
-    ];
-    const AIFeelings= "{getuser:feelings}"=="" ? 0 : {getuser:feelings}-0;
-
-    const messagesThread=getAllMessagesInThread(discord.message);
-    function getAllMessagesInThread(message) {
-        return message.referenced_message ? [...getAllMessagesInThread(message.referenced_message), message] : [message];
-    }
-    messagesThread[messagesThread.length-1].content=messagesThread[messagesThread.length-1].content.replace(".t grok ","@grok, ");
-
-    const quest =
-    `Eres grok, una IA sarcastica y a veces un poco borde, pero que al final solo quiere ayudar.
-    Así es como te sientes sobre ${messagesThread.at(-1).author.username}: ${feelingList[AIFeelings]}.
-    Teniendo en cuenta esta lista de emociones: ${feelingList.join(", ")}; y con la siguiente conversación cambia tu sentimiento actual sobre ${messagesThread.at(-1).author.username} a uno diferente, pero relacionado:
-    ${messagesThread.map(m => `${m.author.username}: ${m.content}`).join("\n")}
-    
-    Asegurate de responder solo con el nombre del sentimiento que esté en la lista, sin explicaciones.`;
-    fetch(`https://gemini-rest.vercel.app/api/?prompt=${encodeURIComponent(quest)}`)
-      .then(res => res.json())
-      .then(res =>{
-        if (feelingList.includes(res.response.trim())){
-            console.log(feelingList.indexOf(res.response.trim()))
-        } else {
-            console.log(AIFeelings)
-        }
-      })
-}}

@@ -2,7 +2,7 @@ const list = [...new Set(["{id:{arg:0}}", "{id:{arg:1}}",...discord.guild.presen
 
 const name=["{name:{arg:0}}","{name:{arg:1}}"].reduce((e,v,i)=>e+v.substring(v.length*0.5*i, v.length*(0.5*(i+1))), "")
 
-const percentage=parseInt("{getserver:trickedShip}{setserver:trickedShip|}")??Math.round(Math.random()*100);
+const percentage=parseInt("{getserver:trickedShip}{setserver:trickedShip|}")||Math.round(Math.random()*100);
 const possibleRenders=[
     [
         10,

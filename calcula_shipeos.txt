@@ -2,7 +2,6 @@ const list = [...new Set(["{id:{arg:0}}", "{id:{arg:1}}",...discord.guild.presen
 
 const name=["{name:{arg:0}}","{name:{arg:1}}"].reduce((e,v,i)=>e+v.substring(v.length*0.5*i, v.length*(0.5*(i+1))), "")
 
-{ignore:
 const percentage="{getserver:trickedShip}{setserver:trickedShip|}"??Math.round(Math.random()*100);
 const possibleRenders=[
     [
@@ -74,7 +73,7 @@ const possibleRenders=[
         "https://media.discordapp.net/attachments/1167806839929438280/1280267300058173471/en_publico_2.png"
     ]
 ];
-
+{ignore:
 const toRender = possibleRenders.find((e)=>e[0]>=percentage);
 const text=`
 {iscript:
